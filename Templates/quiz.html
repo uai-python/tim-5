@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+   <body>
+   
+      <h3>QUIZ no. {{ j }}</h3>
+      <hr/>
+		 {%- for category, message in get_flashed_messages(with_categories = true) %}
+			<div class = "alert alert-danger">
+				{{ message }}
+			</div>
+		{%- endfor %}
+		
+		<form action = "{{ request.path }}" method = "post">
+			<p>{{ x[n] }}</p><br>
+			<input type = "text" name = "answer" placeholder = "Jawaban anda" /><br>
+			<input type = "submit" value = "Submit" />
+		</form>
+		
+	</body>
+</head>
+</html>

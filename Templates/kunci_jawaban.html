@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+   <body>
+   
+      <h3>THE ANSWERS</h3>
+      <hr/>
+		 {%- for category, message in get_flashed_messages(with_categories = true) %}
+			<div class = "alert alert-danger">
+				{{ message }}
+			</div>
+		{% endfor %}
+		<h3>THE QUESTIONS</h3>
+		{% for i in x %}
+			<p>{{ i }}</p>
+		{% endfor %}
+		<h3>YOUR ANSWERS</h3><br>
+		{% for j in z %}
+			<p>{{ j }}</p>
+		{% endfor %}
+		<h3>THE REAL ANSWERS</h3>
+		{% for k in y %}
+			<p>{{ k }}</p>
+		{% endfor %}
+		<form action = "{{ request.path }}" method = "post">
+			<input type = "submit" value = "Back to main menu" />
+		</form>
+	</body>
+</head>
+</html>
